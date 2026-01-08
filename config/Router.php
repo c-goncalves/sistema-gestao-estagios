@@ -5,34 +5,26 @@ class Router {
     private $params = [];
     private $current_route = '';
 
-    /**
-     * Rota GET
-     */
+    // GET
     public function get($route, $page) {
         $this->routes['GET'][$route] = $page;
     }
 
-    /**
-     * Rota POST
-     */
+    // POST
     public function post($route, $page) {
         $this->routes['POST'][$route] = $page;
     }
 
-    /**
-     * Dispara o roteamento
-     */
     public function dispatch() {
         $method = $_SERVER['REQUEST_METHOD'];
         $route = $this->parseUrl();
 
-        // Rota exata
         if (isset($this->routes[$method][$route])) {
             $this->loadPage($this->routes[$method][$route]);
             return;
         }
 
-        // Rota com parâmetros nomeados (ex: /usuarios/{id})
+        // Rota+parâmetros
         foreach ($this->routes[$method] as $pattern => $page) {
             if ($this->matchRoute($pattern, $route)) {
                 $this->loadPage($page);
@@ -40,7 +32,7 @@ class Router {
             }
         }
 
-        // 🔹 Subrotas simples (ex: /solicitacao/inicio)
+        // subrotas
         foreach ($this->routes[$method] as $pattern => $page) {
             if ($this->matchSubRoute($pattern, $route)) {
                 $this->loadPage($page);
@@ -48,7 +40,7 @@ class Router {
             }
         }
 
-        // 🔹 Subrotas aninhadas (ex: /solicitacao/curso/licenciatura/plano)
+        // subrotas aninhadas
         foreach ($this->routes[$method] as $pattern => $page) {
             if ($this->matchNestedRoute($pattern, $route)) {
                 $this->loadPage($page);
@@ -59,9 +51,7 @@ class Router {
         $this->notFound();
     }
 
-    /**
-     * Captura a URL atual (sem query string)
-     */
+    // captura URL
     private function parseUrl() {
         $base_path = dirname($_SERVER['SCRIPT_NAME']);
         $request_uri = $_SERVER['REQUEST_URI'];
@@ -78,9 +68,7 @@ class Router {
         return $this->current_route;
     }
 
-    /**
-     * Rotas com placeholders tipo {id}
-     */
+    // rotas+placeholders
     private function matchRoute($pattern, $url) {
         $regex = preg_replace('/\{([^}]+)\}/', '([^/]+)', $pattern);
         $regex = '#^' . $regex . '$#';
@@ -99,9 +87,7 @@ class Router {
         return false;
     }
 
-    /**
-     * Subrotas simples: /solicitacao/inicio
-     */
+    // subrotas simples
     private function matchSubRoute($pattern, $url) {
         if (str_starts_with($url, $pattern . '/')) {
             $acao = trim(substr($url, strlen($pattern)), '/');
@@ -112,16 +98,12 @@ class Router {
         return false;
     }
 
-    /**
-     * 🔹 NOVO — Subrotas aninhadas: /solicitacao/curso/licenciatura/plano
-     */
     private function matchNestedRoute($pattern, $url) {
         if (!str_starts_with($url, $pattern . '/')) return false;
 
         $subpath = trim(substr($url, strlen($pattern)), '/');
         $segments = explode('/', $subpath);
 
-        // Padrão detectado: /solicitacao/curso/{curso}/{acao}
         if (count($segments) >= 3 && $segments[0] === 'curso') {
             $_GET['curso'] = $segments[1];
             $_GET['acao'] = $segments[2];
@@ -132,9 +114,6 @@ class Router {
         return false;
     }
 
-    /**
-     * Carrega o arquivo da rota
-     */
     private function loadPage($page) {
         $page_path = PAGES_PATH . $page . '.php';
         if (file_exists($page_path)) {
@@ -145,9 +124,7 @@ class Router {
         }
     }
 
-    /**
-     * Página 404
-     */
+    // 404
     private function notFound() {
         http_response_code(404);
         echo "

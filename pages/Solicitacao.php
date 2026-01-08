@@ -16,7 +16,6 @@ function inicio() {
 function tce() {
     $documento_base = 'tce'; 
     $curso = $_GET['curso'] ?? 'outros';
-    // $curso = $_GET['curso'] ?? 'licenciatura';
     $base_forms = __DIR__ . "/../templates/solicitacoes/forms/";
     
     if (strtolower($curso) === 'lic') {
@@ -46,7 +45,6 @@ function tce() {
 function pae() {
     $documento_base = 'pae'; 
     $curso = $_GET['curso'] ?? 'outros';
-    // $curso = $_GET['curso'] ?? 'licenciatura';
     $base_forms = __DIR__ . "/../templates/solicitacoes/forms/";
     
     if (strtolower($curso) === 'lic') {
@@ -99,7 +97,7 @@ function rsem() {
 function ta() {
     $documento_base = 'ta'; 
     $curso = $_GET['curso'] ?? 'outros';
-    // $curso = $_GET['curso'] ?? 'licenciatura';
+    // $curso = $_GET['curso'] ?? 'lic';
     $base_forms = __DIR__ . "/../templates/solicitacoes/forms/";
     
     if (strtolower($curso) === 'lic') {
@@ -129,7 +127,7 @@ function ta() {
 function trtc() {
     $documento_base = 'trtc'; 
     $curso = $_GET['curso'] ?? 'outros';
-    // $curso = $_GET['curso'] ?? 'licenciatura';
+    // $curso = $_GET['curso'] ?? 'lic';
     $base_forms = __DIR__ . "/../templates/solicitacoes/forms/";
     
     if (strtolower($curso) === 'lic') {

@@ -95,9 +95,7 @@ require_once PARTIALS_PATH . 'header.php';
 
 
 
-  <!-- Sidebar / Recursos -->
 <aside class="bg-white p-6 shadow-md border-l-4 border-[#006633] rounded hidden md:block">  
-  <!-- Destaque: Oportunidades de Estágio -->
   <div class="mb-4 p-3 bg-green-100 ">
     <a href="https://gru.ifsp.edu.br/vagas" target="_blank" 
        class="text-[#006633] font-semibold hover:no-underline">
@@ -105,17 +103,14 @@ require_once PARTIALS_PATH . 'header.php';
     </a>
   </div>
 
-  <!-- Título do menu -->
   <h4 class="text-[#006633] font-semibold mb-3 bg-green-100 p-3"><a href="<?php echo BASE_URL; ?>recursos" >Recursos e Documentos</a></h4>
 
-  <!-- Lista de recursos -->
   <ul class="space-y-2 px-4">
     <li><a href="#<?php echo BASE_URL; ?>" class="text-sm text-gray-700 hover:no-underline">Modelos de Documentos</a></li>
     <li><a href="#<?php echo BASE_URL; ?>" class="text-sm text-gray-700 hover:no-underline">Normas e Regulamentos</a></li>
     <li><a href="#<?php echo BASE_URL;?>" class="text-sm text-gray-700 hover:no-underline">Dúvidas Frequentes</a></li>
   </ul>
 
-  <!-- Link + Recursos -->
   <div class="mt-4">
     <a href="<?php echo BASE_URL; ?>/pages/recursos/" class="text-[#006633] font-semibold hover:no-underline">
       + Recursos

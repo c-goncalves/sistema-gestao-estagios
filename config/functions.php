@@ -1,14 +1,7 @@
 
 <?php
 
-/** URL amigável
- * 
- * Ex:
- * url('solicitacoes/cursos/ads/inicio')
- * url('noticias', ['id' => 5])
- * url('', ['page' => 2])
- */
-
+// url amigável
 function url($route = '', $params = []) {
     $url = BASE_URL . $route;
     
@@ -19,18 +12,13 @@ function url($route = '', $params = []) {
     return $url;
 }
 
-/** redirecionamento
- * redirect('solicitacoes/cursos/ads/inicio');
- */
-
+// redirecionamento
  function redirect($route, $code = 302) {
     header('Location: ' . url($route), true, $code);
     exit;
 }
 
-/** rota atual
- * $current = getCurrentRoute(); // 'solicitacoes/cursos/ads'
- */
+// rota atual
 function getCurrentRoute() {
     $base_path = dirname($_SERVER['SCRIPT_NAME']);
     $request_uri = $_SERVER['REQUEST_URI'];
@@ -46,9 +34,7 @@ function getCurrentRoute() {
     return trim($request_uri, '/');
 }
 
-/** retorna um parâmetro GET
- * $step = getParam('step', 'default_value');
- */
+// retorna um parâmetro GET
 function getParam($key, $default = null) {
     return isset($_GET[$key]) ? htmlspecialchars($_GET[$key]) : $default;
 }

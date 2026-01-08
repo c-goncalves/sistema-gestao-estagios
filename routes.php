@@ -6,10 +6,7 @@ class Router {
     private $params = [];
     private $current_route = '';
     
-    /* GET
-     * @param string $route - Padrão da rota (ex: 'solicitacoes/{step}')
-     * @param string $page  - Página a carregar (ex: 'solicitacoes/index')
-     */
+    // GET
     public function get($route, $page) {
         $this->routes['GET'][$route] = $page;
     }

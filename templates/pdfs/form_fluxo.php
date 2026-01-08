@@ -1,267 +1,258 @@
 <?php
 
 function imprimir_steps_nav() { ?>
-<div id="stepsNav" class="flex justify-between mb-6 hidden">
-    <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="0">Orientações</a>
-    <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="1">Unidade Concedente</a>
-    <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="2">Supervisor</a>
-    <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="3">Estagiário</a>
-    <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="4">Dados Complementares</a>
-</div>
+    <div id="stepsNav" class="flex justify-between mb-6 hidden">
+        <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="0">Orientações</a>
+        <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="1">Unidade Concedente</a>
+        <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="2">Supervisor</a>
+        <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="3">Estagiário</a>
+        <a href="#" class="step text-sm font-medium text-gray-500 px-3 py-1 rounded" data-step="4">Dados Complementares</a>
+    </div>
 <?php }
 
-/* STEP 0 — Orientações */
 function orientacoes($current_uri, $pages_path) { ?>
-<fieldset data-step="0" class="mb-4">
-    <h5 class="text-[#09332a] font-semibold mb-2 text-sm">ATENÇÃO AOS PONTOS CRUCIAIS:</h5>
+    <fieldset data-step="0" class="mb-4">
+        <h5 class="text-[#09332a] font-semibold mb-2 text-sm">ATENÇÃO AOS PONTOS CRUCIAIS:</h5>
 
-    <ul class="space-y-1 text-sm text-gray-700">
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>Preencha todos os campos corretamente.</li>
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>O termo deverá ter rubrica em todas as páginas.</li>
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>Máx: 6h/dia — 30h/semana.</li>
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>Não pode coincidir com horário de aula.</li>
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>Se houver outro estágio, máximo cumulativo.</li>
-        <li class="flex gap-2"><span class="text-[#006633]">➤</span>Não iniciar antes de todas as assinaturas.</li>
-        <li class="flex gap-2">
-            <span class="text-[#006633]">➤</span>
-            Recursos:
-            <a href="<?= $pages_path; ?>recursos/" class="text-[#007a4d] underline <?= strpos($current_uri, '/pages/recursos/')!==false?'font-bold':'' ?>">
-                Clique aqui
-            </a>
-        </li>
-    </ul>
+        <ul class="space-y-1 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>Preencha todos os campos corretamente.</li>
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>O termo deverá ter rubrica em todas as páginas.</li>
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>Máx: 6h/dia — 30h/semana.</li>
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>Não pode coincidir com horário de aula.</li>
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>Se houver outro estágio, máximo cumulativo.</li>
+            <li class="flex gap-2"><span class="text-[#006633]">➤</span>Não iniciar antes de todas as assinaturas.</li>
+            <li class="flex gap-2">
+                <span class="text-[#006633]">➤</span>
+                Recursos:
+                <a href="<?= $pages_path; ?>recursos/" class="text-[#007a4d] underline <?= strpos($current_uri, '/pages/recursos/')!==false?'font-bold':'' ?>">
+                    Clique aqui
+                </a>
+            </li>
+        </ul>
 
-    <div class="mt-3 p-3 bg-red-50 text-red-700 border-l-4 border-red-500">
-        <strong>IMPORTANTE:</strong> O estágio só inicia após todas as assinaturas do Termo e do Plano.
-    </div>
+        <div class="mt-3 p-3 bg-red-50 text-red-700 border-l-4 border-red-500">
+            <strong>IMPORTANTE:</strong> O estágio só inicia após todas as assinaturas do Termo e do Plano.
+        </div>
 
-    <div class="flex justify-end mt-4">
-        <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Li e Continuar</button>
-    </div>
-</fieldset>
+        <div class="flex justify-end mt-4">
+            <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Li e Continuar</button>
+        </div>
+    </fieldset>
 <?php }
 
-/* STEP 1 — Unidade Concedente */
 function unidade_concedente() { ?>
-<fieldset data-step="1" class="mb-4 hidden">
-    <h4 class="text-[#006633] font-semibold mb-4">Dados da Unidade Concedente</h4>
+    <fieldset data-step="1" class="mb-4 hidden">
+        <h4 class="text-[#006633] font-semibold mb-4">Dados da Unidade Concedente</h4>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 
-        <div class="md:col-span-2">
-            <label class="font-semibold text-sm">Tipo</label>
-            <select id="unidade_tipo" name="unidade_tipo" class="w-full border rounded px-3 py-2 text-sm">
-                <option value=""></option>
-                <option value="empresa">Empresa (CNPJ)</option>
-                <option value="autonomo">Autônomo (CPF)</option>
-            </select>
+            <div class="md:col-span-2">
+                <label class="font-semibold text-sm">Tipo</label>
+                <select id="unidade_tipo" name="unidade_tipo" class="w-full border rounded px-3 py-2 text-sm">
+                    <option value=""></option>
+                    <option value="empresa">Empresa (CNPJ)</option>
+                    <option value="autonomo">Autônomo (CPF)</option>
+                </select>
+            </div>
+
+            <div id="campos-empresa" class="md:col-span-2 grid grid-cols-2 gap-3 hidden">
+                <div>
+                    <label class="font-semibold text-sm">CNPJ *</label>
+                    <input id="unidade_cnpj" name="unidade_cnpj" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">Insc. Estadual</label>
+                    <input id="unidade_insc_estadual" name="unidade_insc_estadual" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+            </div>
+
+            <div id="campos-autonomo" class="md:col-span-2 grid grid-cols-2 gap-3 hidden">
+                <div>
+                    <label class="font-semibold text-sm">CPF *</label>
+                    <input id="unidade_cpf_autonomo" name="unidade_cpf_autonomo" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+            </div>
+
+            <div>
+                <label class="font-semibold text-sm">Razão Social *</label>
+                <input id="unidade_nome" name="unidade_nome" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+
+            <div>
+                <label class="font-semibold text-sm">Telefone</label>
+                <input id="unidade_telefone" name="unidade_telefone" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="font-semibold text-sm">CEP *</label>
+                <input id="unidade_cep" name="unidade_cep" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-4 gap-3">
+                <div class="col-span-3">
+                    <label class="font-semibold text-sm">Endereço</label>
+                    <input name="unidade_endereco" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="font-semibold text-sm">Número</label>
+                    <input name="unidade_numero" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+                <div class="col-span-2">
+                    <label class="font-semibold text-sm">Bairro</label>
+                    <input name="unidade_bairro" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+                <div class="col-span-2">
+                    <label class="font-semibold text-sm">Cidade</label>
+                    <input name="unidade_cidade" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+                <div class="col-span-4">
+                    <label class="font-semibold text-sm">Estado</label>
+                    <input name="unidade_estado" class="w-full border rounded px-3 py-2 text-sm">
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="font-semibold text-sm">Representante Legal *</label>
+                <input name="unidade_representante" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
         </div>
 
-        <div id="campos-empresa" class="md:col-span-2 grid grid-cols-2 gap-3 hidden">
-            <div>
-                <label class="font-semibold text-sm">CNPJ *</label>
-                <input id="unidade_cnpj" name="unidade_cnpj" class="w-full border rounded px-3 py-2 text-sm">
-            </div>
-            <div>
-                <label class="font-semibold text-sm">Insc. Estadual</label>
-                <input id="unidade_insc_estadual" name="unidade_insc_estadual" class="w-full border rounded px-3 py-2 text-sm">
-            </div>
+        <div class="flex justify-between mt-4">
+            <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
+            <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
+        </div>
+    </fieldset>
+<?php }
+
+function supervisor() { ?>
+    <fieldset data-step="2" class="mb-4 hidden">
+        <h4 class="text-[#006633] font-semibold mb-4">Dados do Supervisor de Estágio</h4>
+
+        <div>
+            <label class="font-semibold text-sm">Nome completo *</label>
+            <input name="supervisor_nome" class="w-full border rounded px-3 py-2 text-sm">
         </div>
 
-        <div id="campos-autonomo" class="md:col-span-2 grid grid-cols-2 gap-3 hidden">
+        <div class="grid grid-cols-2 gap-3 mt-3">
             <div>
                 <label class="font-semibold text-sm">CPF *</label>
-                <input id="unidade_cpf_autonomo" name="unidade_cpf_autonomo" class="w-full border rounded px-3 py-2 text-sm">
-            </div>
-        </div>
-
-        <div>
-            <label class="font-semibold text-sm">Razão Social *</label>
-            <input id="unidade_nome" name="unidade_nome" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-
-        <div>
-            <label class="font-semibold text-sm">Telefone</label>
-            <input id="unidade_telefone" name="unidade_telefone" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-
-        <div class="md:col-span-2">
-            <label class="font-semibold text-sm">CEP *</label>
-            <input id="unidade_cep" name="unidade_cep" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-
-        <div class="md:col-span-2 grid grid-cols-4 gap-3">
-            <div class="col-span-3">
-                <label class="font-semibold text-sm">Endereço</label>
-                <input name="unidade_endereco" class="w-full border rounded px-3 py-2 text-sm">
+                <input name="supervisor_cpf" class="w-full border rounded px-3 py-2 text-sm">
             </div>
             <div>
-                <label class="font-semibold text-sm">Número</label>
-                <input name="unidade_numero" class="w-full border rounded px-3 py-2 text-sm">
+                <label class="font-semibold text-sm">Cargo *</label>
+                <input name="supervisor_cargo" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label class="font-semibold text-sm">Formação Acadêmica</label>
+            <input name="supervisor_formacao" class="w-full border rounded px-3 py-2 text-sm">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-3">
+            <div>
+                <label class="font-semibold text-sm">Registro Profissional</label>
+                <input name="supervisor_registro" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div>
+                <label class="font-semibold text-sm">Órgão</label>
+                <input name="supervisor_orgao" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label class="font-semibold text-sm">E-mail</label>
+            <input name="supervisor_email" class="w-full border rounded px-3 py-2 text-sm">
+        </div>
+
+        <div class="flex justify-between mt-4">
+            <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
+            <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
+        </div>
+    </fieldset>
+<?php }
+
+function estagiario() { ?>
+    <fieldset data-step="3" class="mb-4 hidden">
+        <h4 class="text-[#006633] font-semibold mb-4">Dados do Estagiário</h4>
+
+        <div class="mb-3">
+            <label class="font-medium text-sm">Nome Completo *</label>
+            <input name="estagiario_nome" class="w-full border rounded px-3 py-2 text-sm">
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+            <div>
+                <label class="font-medium text-sm">Curso *</label>
+                <input name="estagiario_curso_nome" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div>
+                <label class="font-medium text-sm">Período *</label>
+                <input name="estagiario_curso_periodo" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div>
+                <label class="font-medium text-sm">Prontuário *</label>
+                <input name="estagiario_curso_prontuario" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label class="font-semibold text-sm">CEP *</label>
+            <input name="estagiario_cep" class="w-full border rounded px-3 py-2 text-sm">
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 mt-3">
+            <div class="col-span-3">
+                <label class="font-semibold text-sm">Endereço *</label>
+                <input name="estagiario_endereco" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div>
+                <label class="font-semibold text-sm">Número *</label>
+                <input name="estagiario_numero" class="w-full border rounded px-3 py-2 text-sm">
             </div>
             <div class="col-span-2">
-                <label class="font-semibold text-sm">Bairro</label>
-                <input name="unidade_bairro" class="w-full border rounded px-3 py-2 text-sm">
+                <label class="font-semibold text-sm">Bairro *</label>
+                <input name="estagiario_bairro" class="w-full border rounded px-3 py-2 text-sm">
             </div>
             <div class="col-span-2">
-                <label class="font-semibold text-sm">Cidade</label>
-                <input name="unidade_cidade" class="w-full border rounded px-3 py-2 text-sm">
+                <label class="font-semibold text-sm">Cidade *</label>
+                <input name="estagiario_cidade" class="w-full border rounded px-3 py-2 text-sm">
             </div>
             <div class="col-span-4">
-                <label class="font-semibold text-sm">Estado</label>
-                <input name="unidade_estado" class="w-full border rounded px-3 py-2 text-sm">
+                <label class="font-semibold text-sm">Estado *</label>
+                <input name="estagiario_estado" class="w-full border rounded px-3 py-2 text-sm">
             </div>
         </div>
 
-        <div class="md:col-span-2">
-            <label class="font-semibold text-sm">Representante Legal *</label>
-            <input name="unidade_representante" class="w-full border rounded px-3 py-2 text-sm">
+        <div class="grid grid-cols-4 gap-3 mt-3">
+            <div>
+                <label class="font-semibold text-sm">Fone</label>
+                <input name="estagiario_fone" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div>
+                <label class="font-semibold text-sm">Cel</label>
+                <input name="estagiario_cel" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
+            <div class="col-span-2">
+                <label class="font-semibold text-sm">E-mail *</label>
+                <input name="estagiario_email" type="email" class="w-full border rounded px-3 py-2 text-sm">
+            </div>
         </div>
-    </div>
 
-    <div class="flex justify-between mt-4">
-        <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
-        <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
-    </div>
-</fieldset>
+        <div class="mt-3 flex items-center gap-2">
+            <input type="checkbox" id="estagiario_pcd" name="estagiario_pcd">
+            <label class="text-sm" for="estagiario_pcd">Pessoa com deficiência (PCD)</label>
+        </div>
+
+        <div class="flex justify-between mt-4">
+            <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
+            <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
+        </div>
+    </fieldset>
 <?php }
 
-/* STEP 2 — Supervisor */
-function supervisor() { ?>
-<fieldset data-step="2" class="mb-4 hidden">
-    <h4 class="text-[#006633] font-semibold mb-4">Dados do Supervisor de Estágio</h4>
-
-    <div>
-        <label class="font-semibold text-sm">Nome completo *</label>
-        <input name="supervisor_nome" class="w-full border rounded px-3 py-2 text-sm">
-    </div>
-
-    <div class="grid grid-cols-2 gap-3 mt-3">
-        <div>
-            <label class="font-semibold text-sm">CPF *</label>
-            <input name="supervisor_cpf" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-semibold text-sm">Cargo *</label>
-            <input name="supervisor_cargo" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label class="font-semibold text-sm">Formação Acadêmica</label>
-        <input name="supervisor_formacao" class="w-full border rounded px-3 py-2 text-sm">
-    </div>
-
-    <div class="grid grid-cols-2 gap-3 mt-3">
-        <div>
-            <label class="font-semibold text-sm">Registro Profissional</label>
-            <input name="supervisor_registro" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-semibold text-sm">Órgão</label>
-            <input name="supervisor_orgao" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label class="font-semibold text-sm">E-mail</label>
-        <input name="supervisor_email" class="w-full border rounded px-3 py-2 text-sm">
-    </div>
-
-    <div class="flex justify-between mt-4">
-        <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
-        <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
-    </div>
-</fieldset>
-<?php }
-
-/* STEP 3 — Estagiário */
-function estagiario() { ?>
-<fieldset data-step="3" class="mb-4 hidden">
-    <h4 class="text-[#006633] font-semibold mb-4">Dados do Estagiário</h4>
-
-    <div class="mb-3">
-        <label class="font-medium text-sm">Nome Completo *</label>
-        <input name="estagiario_nome" class="w-full border rounded px-3 py-2 text-sm">
-    </div>
-
-    <div class="grid grid-cols-3 gap-3">
-        <div>
-            <label class="font-medium text-sm">Curso *</label>
-            <input name="estagiario_curso_nome" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-medium text-sm">Período *</label>
-            <input name="estagiario_curso_periodo" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-medium text-sm">Prontuário *</label>
-            <input name="estagiario_curso_prontuario" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-    </div>
-
-    <div class="mt-3">
-        <label class="font-semibold text-sm">CEP *</label>
-        <input name="estagiario_cep" class="w-full border rounded px-3 py-2 text-sm">
-    </div>
-
-    <div class="grid grid-cols-4 gap-3 mt-3">
-        <div class="col-span-3">
-            <label class="font-semibold text-sm">Endereço *</label>
-            <input name="estagiario_endereco" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-semibold text-sm">Número *</label>
-            <input name="estagiario_numero" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div class="col-span-2">
-            <label class="font-semibold text-sm">Bairro *</label>
-            <input name="estagiario_bairro" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div class="col-span-2">
-            <label class="font-semibold text-sm">Cidade *</label>
-            <input name="estagiario_cidade" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div class="col-span-4">
-            <label class="font-semibold text-sm">Estado *</label>
-            <input name="estagiario_estado" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-    </div>
-
-    <div class="grid grid-cols-4 gap-3 mt-3">
-        <div>
-            <label class="font-semibold text-sm">Fone</label>
-            <input name="estagiario_fone" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div>
-            <label class="font-semibold text-sm">Cel</label>
-            <input name="estagiario_cel" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-        <div class="col-span-2">
-            <label class="font-semibold text-sm">E-mail *</label>
-            <input name="estagiario_email" type="email" class="w-full border rounded px-3 py-2 text-sm">
-        </div>
-    </div>
-
-    <div class="mt-3 flex items-center gap-2">
-        <input type="checkbox" id="estagiario_pcd" name="estagiario_pcd">
-        <label class="text-sm" for="estagiario_pcd">Pessoa com deficiência (PCD)</label>
-    </div>
-
-    <div class="flex justify-between mt-4">
-        <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
-        <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Continuar</button>
-    </div>
-</fieldset>
-<?php }
-
-function dados_teste() { ?>
-    <div><p>teste</p></div>
-<?php }
-
-/* STEP 4 — Placeholder */
 function dados_complementares() { ?>
-<fieldset data-step="4" class="mb-4 hidden">
+    <fieldset data-step="4" class="mb-4 hidden">
         <h4 class="text-[#006633] font-semibold mb-3">Período e Atividades do Estágio</h4>
         <div class="p-3 rounded border-l-4 border-red-500 bg-red-50 text-red-700 mb-3">
             <strong>ATENÇÃO:</strong> Garanta que a carga horária <strong>NÃO EXCEDA 6 horas diárias / 30 horas semanais</strong> e não conflite com o horário de aulas.
@@ -349,15 +340,10 @@ function dados_complementares() { ?>
                 <button type="button" data-prev class="bg-gray-100 text-[#006633] font-bold px-4 py-2 rounded hover:bg-gray-200">Anterior</button>
                 <button type="button" data-next class="bg-[#006633] text-white font-bold px-4 py-2 rounded hover:bg-[#004d26]">Enviar</button>
             </div>
-        </fieldset>
+        </div>
+    </fieldset>
 <?php }
 
-
-
-/**
- * CSS.
- * @return void
- */
 function imprimir_styles() {
     ?>
     <style>
@@ -373,33 +359,26 @@ function imprimir_styles() {
             color: white;
         }
 
-        /* Adicione estas regras de estilo ao seu bloco <style> */
         .select-chip {
-        /* Estilo base do chip (não selecionado) */
         display: inline-block;
-        padding: 0.25rem 0.75rem; /* py-1 px-3 */
-        font-size: 0.875rem; /* text-sm */
-        font-weight: 500; /* font-medium */
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
         cursor: pointer;
         
-        /* Cores padrão (Não Selecionado) */
-        background-color: #e5e7eb; /* gray-200 */
-        color: #4b5563; /* gray-600 */
-        border: 1px solid #d1d5db; /* border-gray-300 */
+        background-color: #e5e7eb;
+        color: #4b5563;
+        border: 1px solid #d1d5db;
         
-        /* Transição para efeito hover/seleção */
         transition: all 0.2s ease-in-out;
         }
 
         .select-chip:hover {
-        background-color: #d1d5db; /* gray-300 */
-        color: #1f2937; /* gray-800 */
+        background-color: #d1d5db;
+        color: #1f2937;
         }
 
-        /* O Segredo: Usa a pseudoclasse checked do input escondido 
-        para estilizar o label vizinho (o chip visível) */
         input[type="checkbox"]:checked + .select-chip {
-        /* Cores Selecionado (Usando sua cor verde principal: #006633) */
         background-color: #006633;
         color: white;
         border-color: #004d26; 
@@ -409,10 +388,6 @@ function imprimir_styles() {
     <?php
 }
 
-/**
- * JavaScript
- * @return void
- */
 function imprimir_script_js() {
     ?>
     <script>
@@ -482,7 +457,6 @@ function imprimir_script_js() {
             });
         });
         
-        // INCLUSAO DOS HORÁRIOS
         
         let horariosEstagio = [];
         const LIMITE_SEMANAL_HORAS = 30;
@@ -569,7 +543,6 @@ function imprimir_script_js() {
             renderTable();
         }
         
-        // FUNÇÃO CENTRAL DE VALIDAÇÃO E ADIÇÃO (TEMPORÁRIA COM LOGS)
         function addHorario(dia, inicio, fim, isBulkAdd = false) {
             if (!dia || !inicio || !fim) {
                 if (!isBulkAdd) alert('Por favor, preencha todos os campos de horário.');
@@ -578,7 +551,7 @@ function imprimir_script_js() {
             
             const inicioMin = timeToMinutes(inicio);
             const fimMin = timeToMinutes(fim);
-            const limiteDiario = 6 * 60; // 360 minutos
+            const limiteDiario = 6 * 60; 
 
 
             if (inicioMin >= fimMin) {
@@ -589,7 +562,7 @@ function imprimir_script_js() {
 
             let duration = fimMin - inicioMin;
             if (duration < 0) {
-                duration += 24 * 60; // Caso a duração ultrapasse a meia-noite
+                duration += 24 * 60; 
             }
             
 
@@ -599,15 +572,13 @@ function imprimir_script_js() {
                 return false;
             }
 
-            // 3. Check Duplication
             const existingIndex = horariosEstagio.findIndex(h => h.dia === dia);
             if (existingIndex !== -1) {
                 console.error("Erro: Duplicação detectada.");
                 if (!isBulkAdd) alert(`Já existe um horário registrado para ${dia}. Por favor, remova o anterior antes de adicionar um novo.`);
-                return false; // <-- ESTA LINHA É A VERIFICAÇÃO DE DUPLICAÇÃO
+                return false;
             }
 
-            // Se passou na validação:
             horariosEstagio.push({ dia, inicio, fim });
             return true;
         }
@@ -662,7 +633,6 @@ function imprimir_script_js() {
             return true;
         }
 
-        // UNIDADE CONCEDENTE
         function initializeUnidadeTipoSelector() {
             const selector = document.getElementById('unidade_tipo');
             const camposEmpresa = document.getElementById('campos-empresa');
@@ -686,7 +656,6 @@ function imprimir_script_js() {
             toggleCampos();
         }
 
-        // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
             showStep(currentStep); 
             initializeUnidadeTipoSelector();

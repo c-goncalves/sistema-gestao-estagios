@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-/**
- * ===============================================
- *  Configuração de caminhos globais
- * ===============================================
- */
+// Caminhos globais
 define('BASE_PATH', __DIR__ . '/');
 define('BASE_URL', rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/');
 define('CONFIG_PATH', BASE_PATH . 'config/');
@@ -15,33 +11,16 @@ define('ASSETS_URL', BASE_URL . 'assets/');
 define('PARTIALS_PATH', BASE_PATH . 'templates/partials/');
 
 
-/**
- * ===============================================
- *  Dependências principais
- * ===============================================
- */
+// dependências principais
 require_once CONFIG_PATH . 'db.php';
 require_once CONFIG_PATH . 'Router.php';
 require_once CONFIG_PATH . 'functions.php';
 
-/**
- * ===============================================
- *  Inicializa o roteador antes das rotas
- * ===============================================
- */
+// Init router
 $router = new Router();
 
-/**
- * ===============================================
- *  Carrega o mapa de rotas
- * ===============================================
- */
+// mapeamento das rotas
 require_once CONFIG_PATH . 'routes/web.php';
 
-/**
- * ===============================================
- *  Despacha a rota atual
- * ===============================================
- */
 $router->dispatch();
 ?>
